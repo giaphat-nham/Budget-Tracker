@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+    <script defer src="js/script.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="site-name">Budget Tracker</div>
+        </div>
+    </header>
+
+    <div class="grid">
+        <div class="categories">
+            <h2 class="category-list-title">My Categories</h2>
+            <ul class="category-list" data-category-list>
+            </ul>
+
+            <button data-modal-target="#add-category" class="btn">Add new category</button>
+        </div>
+
+        <div class="budget-details" data-category-display-container>
+            <div class="budget-header">
+                <h2 class="category-list-title" data-category-title></h2>
+                <p class="total" data-category-total></p>
+            </div>
+            <div class="details" data-details>
+            </div>
+            <div class="detail-button">
+                <button data-modal-target="#add-expense" class="btn">Add new expense</button>
+                <button class="btn delete" data-delete-category-button>Delete category</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Modal-->
+    <div class="modal" id="add-category">
+        <div class="modal-header">
+            <div class="modal-title">Add new category</div>
+            <button data-modal-close-button class="modal-close-button">&times;</button>
+        </div>
+        <div class="modal-content">
+            <input type="text" placeholder="New category name" data-add-category-input>
+            <button class="add-btn" data-add-category-button>Add</button>
+        </div>
+    </div>
+
+    <div class="modal" id="add-expense">
+        <div class="modal-header">
+            <div class="modal-title">Add new expense</div>
+            <button data-modal-close-button class="modal-close-button">&times;</button>
+        </div>
+        <div class="modal-content">
+            <input type="text" placeholder="New expense" data-add-expense-input-name>
+            <input type="number" placeholder="Amount" data-add-expense-input-amount>
+            <button class="add-btn" data-add-expense-button>Add</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <footer>
+        <p>Made by NhamGiaPhat</p>
+    </footer>
+
+    <template id="detail-template">
+        <div class="detail">
+            <div class="detail-name" data-detail-name></div>
+            <div class="detail-amount" data-detail-amount></div>
+            <button class="ex-delete">&times;</button>
+        </div>
+    </template>
+</body>
+
+</html>
